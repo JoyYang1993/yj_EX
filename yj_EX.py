@@ -9,7 +9,7 @@ def hello_world():
 
 
 @app.route('/yj_index', methods=('GET', ))
-def yj_ex():
+def yj_index():
     return jsonify({
         'code': 200,
         'msg': 'ok',
@@ -27,6 +27,129 @@ def yj_ex():
             'xjTime': '08-12 12:00'
         }
     })
+
+
+@app.route('/yj_transferAccounts', methods=('GET', ))
+def yj_transferAccount():
+    return jsonify(
+        {
+            'code': 200,
+            'msg': 'ok',
+            'data': {
+                'tbzhye': 2000,
+                'mbzhye': 3000,
+                'xjzhye': 4000,
+                'current_transfer_account': [
+                    {
+                        'id': 10001,
+                        'from': {
+
+                        },
+                        'to': {
+                            'userLogo': '../static/images/transferAccounts/user1.png',
+                            'way': '支付宝',
+                            'username': '杨娇',
+                            'classify': '现金账户',
+                            'use': '话费',
+                            'money': 1000,
+                            'time': '2017-12-24 11:00'
+                        }
+                    },
+                    {
+                        'id': 10002,
+                        'from': {
+
+                        },
+                        'to': {
+                            'userLogo': '../static/images/transferAccounts/user2.png',
+                            'way': '现金',
+                            'username': '卢鹏',
+                            'classify': '现金账户',
+                            'use': '圣诞礼物',
+                            'money': 2000,
+                            'time': '2017-12-24 12:00'
+                        }
+                    },
+                    {
+                        'id': 10003,
+                        'from': {
+
+                        },
+                        'to': {
+                            'userLogo': '../static/images/transferAccounts/user3.png',
+                            'way': '白条',
+                            'username': '杨娇',
+                            'classify': '京东白条',
+                            'use': '买烤鸭',
+                            'money': 200,
+                            'time': '2017-12-24 11:00'
+                        }
+                    },
+                    {
+                        'id': 10004,
+                        'from': {
+
+                        },
+                        'to': {
+                            'userLogo': '../static/images/transferAccounts/user4.png',
+                            'way': '支付宝',
+                            'username': '卢鹏',
+                            'classify': '麦宝账户',
+                            'use': '话费',
+                            'money': 100,
+                            'time': '2017-12-24 13:00'
+                        }
+                    }
+                ]
+            }
+        }
+    )
+
+
+@app.route('/yj_transferAccount_nochoise', methods=('GET', 'POST'))
+def yj_transferAccount_nochoice():
+    if request.method == 'GET':
+        return jsonify({
+            'code': 200,
+            'msg': 'ok',
+            'data': {
+                'account_username_input': '',
+                'remain_money_input': 3000,
+                'account_money_input': '',
+                'remark_input': '',
+                'verify_code_input': ''
+            }
+        })
+    else:
+        print(request.json)
+        return jsonify({
+            'code': 200,
+            'msg': 'ok'
+        })
+
+
+@app.route('/yj_transferAccount_choise', methods=('GET', 'POST'))
+def yj_transferAccount_choice():
+    if request.method == 'GET':
+        return jsonify({
+            'code': 200,
+            'msg': 'ok',
+            'data': {
+                'account_username_input': '',
+                'account_person_input': '',
+                'account_code_input': '',
+                'remain_money_input': 3000,
+                'account_money_input': '',
+                'remark_input': '',
+                'verify_code_input': ''
+            }
+        })
+    else:
+        print(request.json)
+        return jsonify({
+            'code': 200,
+            'msg': 'ok'
+        })
 
 
 if __name__ == '__main__':
