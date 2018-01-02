@@ -152,5 +152,78 @@ def yj_transferAccount_choice():
         })
 
 
+@app.route('/yj_accountList', methods=('GET', 'POST'))
+def yj_accountList():
+    if request.method == 'GET':
+        return jsonify({
+            'code': 200,
+            'msg': 'ok',
+            'data': {
+                'current_transfer_account': [
+                    {
+                        'id': 10001,
+                        'from': {
+
+                        },
+                        'to': {
+                            'userLogo': '../static/images/transferAccounts/user1.png',
+                            'way': '支付宝',
+                            'username': '杨娇',
+                            'classify': '现金账户',
+                            'use': '话费',
+                            'money': 1000,
+                            'time': '2017-12-24 11:00'
+                        }
+                    },
+                    {
+                        'id': 10002,
+                        'from': {
+
+                        },
+                        'to': {
+                            'userLogo': '../static/images/transferAccounts/user2.png',
+                            'way': '现金',
+                            'username': '卢鹏',
+                            'classify': '现金账户',
+                            'use': '圣诞礼物',
+                            'money': 2000,
+                            'time': '2017-12-24 12:00'
+                        }
+                    },
+                    {
+                        'id': 10003,
+                        'from': {
+
+                        },
+                        'to': {
+                            'userLogo': '../static/images/transferAccounts/user3.png',
+                            'way': '白条',
+                            'username': '杨娇',
+                            'classify': '京东白条',
+                            'use': '买烤鸭',
+                            'money': 200,
+                            'time': '2017-12-24 11:00'
+                        }
+                    },
+                    {
+                        'id': 10004,
+                        'from': {
+
+                        },
+                        'to': {
+                            'userLogo': '../static/images/transferAccounts/user4.png',
+                            'way': '支付宝',
+                            'username': '卢鹏',
+                            'classify': '麦宝账户',
+                            'use': '话费',
+                            'money': 100,
+                            'time': '2017-12-24 13:00'
+                        }
+                    }
+                ]
+            }
+        })
+
+
 if __name__ == '__main__':
     app.run()
