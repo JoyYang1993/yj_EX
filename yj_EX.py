@@ -264,5 +264,17 @@ def yj_accountList():
         })
 
 
+@app.route('/yj_header', methods=('GET', 'POST'))
+def yj_header():
+    return jsonify({
+        'code': 200,
+        'msg': 'ok',
+        'data': {
+            'backArrows_orange': '../static/images/header/backArrows.png'
+        }
+    })
+
+
+
 if __name__ == '__main__':
     app.run()
