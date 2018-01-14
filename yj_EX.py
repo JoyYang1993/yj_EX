@@ -275,5 +275,101 @@ def yj_header():
     })
 
 
+@app.route('/yj_list_wallet', methods=('GET', 'POST'))
+def yj_list_wallet():
+    return jsonify({
+        'code': 200,
+        'msg': 'ok',
+        'data': {
+            'classify': [
+                {
+                    'id': 1001,
+                    'account': {
+                        'userLogo': '../static/images/myWallet/user1.png',
+                        'userName': '通宝账户',
+                        'balance_money': 2000.00,
+                        'balance_usable': 1000.00,
+                        'balance_lock': 100.00,
+                        'tomorrow_extend': 300.00,
+                        'tomorrow_earnings': 300.00
+                    }
+                },
+                {
+                    'id': 1002,
+                    'account': {
+                        'userLogo': '../static/images/myWallet/user2.png',
+                        'userName': '麦宝账户',
+                        'balance_money': 2000.00,
+                        'balance_usable': 1000.00,
+                        'balance_lock': 100.00,
+                        'tomorrow_extend': 300.00,
+                        'tomorrow_earnings': 300.00
+                    }
+                },
+                {
+                    'id': 1003,
+                    'account': {
+                        'userLogo': '../static/images/myWallet/user3.png',
+                        'userName': '现金账户',
+                        'balance_money': 2000.00,
+                        'balance_usable': 1000.00,
+                        'balance_lock': 100.00,
+                        'tomorrow_extend': 300.00,
+                        'tomorrow_earnings': 300.00
+                    }
+                },
+                {
+                    'id': 1004,
+                    'account': {
+                        'userLogo': '../static/images/myWallet/user4.png',
+                        'userName': '额度账户',
+                        'balance_money': 2000.00,
+                        'balance_usable': 1000.00,
+                        'balance_lock': 100.00,
+                        'tomorrow_extend': 300.00,
+                        'tomorrow_earnings': 300.00
+                    }
+                },
+                {
+                    'id': 1005,
+                    'account': {
+                        'userLogo': '../static/images/myWallet/user5.png',
+                        'userName': '贷款账户',
+                        'balance_money': 2000.00,
+                        'balance_usable': 1000.00,
+                        'balance_lock': 100.00,
+                        'tomorrow_extend': 300.00,
+                        'tomorrow_earnings': 300.00
+                    }
+                },
+                {
+                    'id': 1006,
+                    'account': {
+                        'userLogo': '../static/images/myWallet/user6.png',
+                        'userName': '股权账户',
+                        'balance_money': 2000.00,
+                        'balance_usable': 1000.00,
+                        'balance_lock': 100.00,
+                        'tomorrow_extend': 300.00,
+                        'tomorrow_earnings': 300.00
+                    }
+                },
+                {
+                    'id': 1007,
+                    'account': {
+                        'userLogo': '../static/images/myWallet/user7.png',
+                        'userName': '期权账户',
+                        'balance_money': 2000.00,
+                        'balance_usable': 1000.00,
+                        'balance_lock': 100.00,
+                        'tomorrow_extend': 300.00,
+                        'tomorrow_earnings': 300.00
+                    }
+                }
+            ]
+        }
+    })
+
+
 if __name__ == '__main__':
     app.run()
